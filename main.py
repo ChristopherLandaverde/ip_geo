@@ -64,6 +64,8 @@ def main():
     st.set_page_config(page_title=settings.PAGE_TITLE, layout="wide",page_icon="🌍",initial_sidebar_state="expanded")
     st.title("🌍 IP Analytics Dashboard")
     st.markdown("### 📊 Track and analyze visitor locations and page engagement")
+
+
     st.markdown("""
     <style>
     .main {
@@ -81,6 +83,42 @@ def main():
     
     initialize_session_state()
     api_key, uploaded_file, process_button = setup_sidebar()
+
+    if st.session_state.processed_data is None:
+        st.markdown("""#### Objective
+Implement IP trace functionality for GA4 server-side tracking to:
+- Ensure accurate geolocation.
+- Prevent fraudulent activities.
+- Maintain compliance with privacy laws by anonymizing IP addresses.
+
+#### Actors
+- **End Users**: Visitors interacting with the website or app.
+- **Marketing Team**: Uses geolocation data for campaign optimization.
+- **Security Team**: Monitors suspicious activity.
+- **GA4 Server-Side Setup**: Processes and forwards user events.
+
+#### Process
+1. **Data Collection**: 
+   - User visits the site/app.
+   - Middleware captures the IP address from the HTTP request.
+2. **Geolocation Lookup**:
+   - Middleware determines approximate location (e.g., country, city).
+3. **IP Anonymization**:
+   - Replace the last octet (IPv4) or truncate (IPv6).
+   - Retain broad geolocation accuracy.
+4. **Data Enrichment**:
+   - Add geolocation data (e.g., country, city) to the event payload.
+5. **Forward to GA4**:
+   - Send anonymized, enriched event data to GA4 servers.
+6. **Analysis**:
+   - Marketing refines campaigns with geolocation insights.
+   - Security investigates flagged patterns.
+
+
+#### Extensions
+- **Fraud Prevention**: Detect unusual IP patterns (e.g., bots).
+- **Real-Time Alerts**: Notify security teams of suspicious activities.
+""")
     
     if process_button:
         process_data(api_key, uploaded_file)
