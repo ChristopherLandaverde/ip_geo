@@ -1,5 +1,7 @@
 
-# IP Analytics Dashboard
+# 🌍 GA4 IP Detective:
+
+![screen-capture](https://github.com/user-attachments/assets/c2fd6509-01f0-462b-bda9-9b6f55c4f0f0)
 
 ## Overview
 An interactive web application that transforms raw IP address data into actionable geographic and marketing insights. Built with Streamlit and IPstack API, this tool helps marketing teams and analysts understand their user base's geographic distribution and behavior patterns.
