@@ -43,9 +43,6 @@ An interactive web application that transforms raw IP address data into actionab
 
 
 
-## Installation & Setup
- 
-
 ## Demo
 https://christopherlandaverde-ip-geo-main-swmgtg.streamlit.app/
  
