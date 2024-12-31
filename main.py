@@ -97,7 +97,7 @@ def main():
             st.subheader("🗺️ Geographic Distribution")
             map_type = st.radio("Select Map Type", ["Marker Cluster", "Heatmap"], horizontal=True)
             if st.session_state.map_created:
-                m = MapVisualizer.create_map(df, map_type.lower())
+                m = MapVisualizer.create_map(df, "markers" if map_type == "Marker Cluster" else "heatmap")
                 if m:
                     st.components.v1.html(m._repr_html_(), height=600)
         
